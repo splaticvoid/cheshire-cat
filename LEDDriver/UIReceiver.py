@@ -27,9 +27,9 @@ class UIReceiver(object):
 			
 	'''returns a dictionary structure containing the elements returned in the serial buffer'''
 	@staticmethod
-	def formatResult():
+	def formatResult(message):
 		ccDict = {}
-		ccInput = UIReceiver.getInput()
+		ccInput = message
 		print "serial string: ", ccInput
 		ccKeyValues = ccInput.strip().split(',')
 		
@@ -40,5 +40,13 @@ class UIReceiver(object):
 			ccDict[keyValuePair[0].strip()] = keyValuePair[1].strip()
 		return ccDict	
 
+if __name__ == '__main__':
+    receiver = UIReceiver()
 	
-	
+	result = UIReceiver.getInput()	
+	print "serial: ", result
+
+	dictResult = UIReceiver.formatResult(message)
+	for keys,values in dictResult.items():
+		print(keys)
+		print(values)

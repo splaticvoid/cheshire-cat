@@ -12,11 +12,7 @@ from CheshireCatModes import CheshireCatActions
 import LEDDriver 
 import UIReceiver 
 
-
-
-
 def setup():
-
 	return
 
 
@@ -78,4 +74,3 @@ def importArguments():
 args = importArguments()
 setup()
 loop()
-
